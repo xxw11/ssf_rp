@@ -37,5 +37,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3  python  -m torch.distributed.launch --nproc_per_no
 	--model-ema --model-ema-decay 0.99992  \
 	--output  ${OUTPUT_PATH}/vit_base_patch16_224_in21k/cifar_100/ssf \
 	--amp --tuning-mode ssf --pretrained --seed -1  \
-	--use-full-warmup 
+	
+	# --use-full-warmup 
 	
