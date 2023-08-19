@@ -758,12 +758,12 @@ def main():
                 save_metric = eval_metrics[eval_metric]
                 best_metric, best_epoch = saver.save_checkpoint(
                     epoch, metric=save_metric)
-
+        if best_metric is not None:
+            _logger.info(
+                '*** Best metric: {0} (epoch {1})'.format(best_metric, best_epoch))
     except KeyboardInterrupt:
         pass
-    if best_metric is not None:
-        _logger.info(
-            '*** Best metric: {0} (epoch {1})'.format(best_metric, best_epoch))
+    
 
 
 def train_one_epoch(
